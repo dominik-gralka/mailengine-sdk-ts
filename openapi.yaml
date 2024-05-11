@@ -1,0 +1,53 @@
+openapi: 3.0.0
+info:
+  title: Email Sender API
+  description: An API for sending emails
+  version: 1.0.0
+servers:
+  - url: https://mailengine.umbratic.com
+paths:
+  /send-email:
+    post:
+      summary: Send an email
+      description: Endpoint to send an email
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                recipientEmail:
+                  type: string
+                  format: email
+                  example: "john.doe@example.com"
+                recipientName:
+                  type: string
+                  example: "John Doe"
+                senderEmail:
+                  type: string
+                  format: email
+                  example: "noreply@example.com"
+                senderName:
+                  type: string
+                  example: "No Reply"
+                emailSubject:
+                  type: string
+                  example: "Important Information"
+                emailContent:
+                  type: string
+                  example: "This is a test email content."
+      responses:
+        '200':
+          description: Email sent successfully
+        '401':
+          description: Unauthorized - Bearer token missing or invalid
+        '400':
+          description: Bad request - Missing or invalid request body
+      security:
+        - bearerAuth: []
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
