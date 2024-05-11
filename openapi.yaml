@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Email Sender API
   description: An API for sending emails
-  version: 0.1.5
+  version: 0.1.6
 servers:
   - url: https://mailengine.umbratic.com/api
 paths:
