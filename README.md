@@ -141,7 +141,7 @@ You can override the default server globally by passing a server index to the `s
 
 | # | Server | Variables |
 | - | ------ | --------- |
-| 0 | `https://api.example.com/v1` | None |
+| 0 | `https://mailengine.umbratic.com` | None |
 
 ```typescript
 import { MailEngine } from "mailengine";
@@ -178,7 +178,7 @@ The default server can also be overridden globally by passing a URL to the `serv
 import { MailEngine } from "mailengine";
 
 const mailEngine = new MailEngine({
-    serverURL: "https://api.example.com/v1",
+    serverURL: "https://mailengine.umbratic.com",
     bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
