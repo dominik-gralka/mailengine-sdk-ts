@@ -18,7 +18,7 @@ typescript:
     devDependencies: {}
     peerDependencies: {}
   additionalPackageJSON: {}
-  author: Speakeasy
+  author: Umbratic
   clientServerStatusCodesAsErrors: true
   enumFormat: enum
   flattenGlobalSecurity: true
@@ -34,6 +34,6 @@ typescript:
   maxMethodParams: 4
   methodArguments: require-security-and-request
   outputModelSuffix: output
-  packageName: mailengine
+  packageName: @umbratic/mailengine
   responseFormat: envelope-http
   templateVersion: v2
