@@ -1,7 +1,7 @@
 {
   "name": "@umbratic/mailengine",
-  "version": "0.1.3",
-  "author": "Umbratic",  
+  "version": "0.1.4",
+  "author": "Umbratic",
   "main": "./index.js",
   "sideEffects": false,
   "scripts": {
@@ -22,7 +22,5 @@
     "typescript": "^5.4.5",
     "zod": "^3.23.4"
   },
-  "dependencies": {
-    
-  }
+  "dependencies": {}
 }
