@@ -1,4 +1,4 @@
-# PostSendEmailRequestBody
+# SendEmailRequestBody
 
 
 ## Fields

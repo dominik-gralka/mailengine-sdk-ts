@@ -51,7 +51,7 @@ const mailEngine = new MailEngine({
 });
 
 async function run() {
-    const result = await mailEngine.postSendEmail({
+    const result = await mailEngine.sendEmail({
         recipientEmail: "john.doe@example.com",
         recipientName: "John Doe",
         senderEmail: "noreply@example.com",
@@ -74,7 +74,7 @@ run();
 
 ### [MailEngine SDK](docs/sdks/mailengine/README.md)
 
-* [postSendEmail](docs/sdks/mailengine/README.md#postsendemail) - Send an email
+* [sendEmail](docs/sdks/mailengine/README.md#sendemail) - Send an email
 <!-- End Available Resources and Operations [operations] -->
 
 <!-- Start Error Handling [errors] -->
@@ -100,7 +100,7 @@ const mailEngine = new MailEngine({
 async function run() {
     let result;
     try {
-        result = await mailEngine.postSendEmail({
+        result = await mailEngine.sendEmail({
             recipientEmail: "john.doe@example.com",
             recipientName: "John Doe",
             senderEmail: "noreply@example.com",
@@ -152,7 +152,7 @@ const mailEngine = new MailEngine({
 });
 
 async function run() {
-    const result = await mailEngine.postSendEmail({
+    const result = await mailEngine.sendEmail({
         recipientEmail: "john.doe@example.com",
         recipientName: "John Doe",
         senderEmail: "noreply@example.com",
@@ -183,7 +183,7 @@ const mailEngine = new MailEngine({
 });
 
 async function run() {
-    const result = await mailEngine.postSendEmail({
+    const result = await mailEngine.sendEmail({
         recipientEmail: "john.doe@example.com",
         recipientName: "John Doe",
         senderEmail: "noreply@example.com",
@@ -270,7 +270,7 @@ const mailEngine = new MailEngine({
 });
 
 async function run() {
-    const result = await mailEngine.postSendEmail({
+    const result = await mailEngine.sendEmail({
         recipientEmail: "john.doe@example.com",
         recipientName: "John Doe",
         senderEmail: "noreply@example.com",

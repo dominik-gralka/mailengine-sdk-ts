@@ -1,4 +1,4 @@
-# PostSendEmailResponse
+# SendEmailResponse
 
 
 ## Fields

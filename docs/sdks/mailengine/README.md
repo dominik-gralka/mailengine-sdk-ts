@@ -7,9 +7,9 @@ Email Sender API: An API for sending emails
 
 ### Available Operations
 
-* [postSendEmail](#postsendemail) - Send an email
+* [sendEmail](#sendemail) - Send an email
 
-## postSendEmail
+## sendEmail
 
 Endpoint to send an email
 
@@ -23,7 +23,7 @@ const mailEngine = new MailEngine({
 });
 
 async function run() {
-  const result = await mailEngine.postSendEmail({
+  const result = await mailEngine.sendEmail({
     recipientEmail: "john.doe@example.com",
     recipientName: "John Doe",
     senderEmail: "noreply@example.com",
@@ -43,14 +43,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PostSendEmailRequestBody](../../models/operations/postsendemailrequestbody.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.SendEmailRequestBody](../../models/operations/sendemailrequestbody.md)                                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 
 
 ### Response
 
-**Promise<[operations.PostSendEmailResponse](../../models/operations/postsendemailresponse.md)>**
+**Promise<[operations.SendEmailResponse](../../models/operations/sendemailresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

@@ -5,7 +5,7 @@
 import * as components from "../components";
 import * as z from "zod";
 
-export type PostSendEmailRequestBody = {
+export type SendEmailRequestBody = {
     recipientEmail?: string | undefined;
     recipientName?: string | undefined;
     senderEmail?: string | undefined;
@@ -14,12 +14,12 @@ export type PostSendEmailRequestBody = {
     emailContent?: string | undefined;
 };
 
-export type PostSendEmailResponse = {
+export type SendEmailResponse = {
     httpMeta: components.HTTPMetadata;
 };
 
 /** @internal */
-export namespace PostSendEmailRequestBody$ {
+export namespace SendEmailRequestBody$ {
     export type Inbound = {
         recipientEmail?: string | undefined;
         recipientName?: string | undefined;
@@ -29,7 +29,7 @@ export namespace PostSendEmailRequestBody$ {
         emailContent?: string | undefined;
     };
 
-    export const inboundSchema: z.ZodType<PostSendEmailRequestBody, z.ZodTypeDef, Inbound> = z
+    export const inboundSchema: z.ZodType<SendEmailRequestBody, z.ZodTypeDef, Inbound> = z
         .object({
             recipientEmail: z.string().optional(),
             recipientName: z.string().optional(),
@@ -58,7 +58,7 @@ export namespace PostSendEmailRequestBody$ {
         emailContent?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, PostSendEmailRequestBody> = z
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, SendEmailRequestBody> = z
         .object({
             recipientEmail: z.string().optional(),
             recipientName: z.string().optional(),
@@ -80,12 +80,12 @@ export namespace PostSendEmailRequestBody$ {
 }
 
 /** @internal */
-export namespace PostSendEmailResponse$ {
+export namespace SendEmailResponse$ {
     export type Inbound = {
         HttpMeta: components.HTTPMetadata$.Inbound;
     };
 
-    export const inboundSchema: z.ZodType<PostSendEmailResponse, z.ZodTypeDef, Inbound> = z
+    export const inboundSchema: z.ZodType<SendEmailResponse, z.ZodTypeDef, Inbound> = z
         .object({
             HttpMeta: components.HTTPMetadata$.inboundSchema,
         })
@@ -99,7 +99,7 @@ export namespace PostSendEmailResponse$ {
         HttpMeta: components.HTTPMetadata$.Outbound;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, PostSendEmailResponse> = z
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, SendEmailResponse> = z
         .object({
             httpMeta: components.HTTPMetadata$.outboundSchema,
         })

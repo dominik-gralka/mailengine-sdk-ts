@@ -44,10 +44,10 @@ export class MailEngine extends ClientSDK {
      * @remarks
      * Endpoint to send an email
      */
-    async postSendEmail(
-        request: operations.PostSendEmailRequestBody,
+    async sendEmail(
+        request: operations.SendEmailRequestBody,
         options?: RequestOptions
-    ): Promise<operations.PostSendEmailResponse> {
+    ): Promise<operations.SendEmailResponse> {
         const input$ = request;
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
@@ -56,7 +56,7 @@ export class MailEngine extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.PostSendEmailRequestBody$.outboundSchema.parse(value$),
+            (value$) => operations.SendEmailRequestBody$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = enc$.encodeJSON("body", payload$, { explode: true });
@@ -74,7 +74,7 @@ export class MailEngine extends ClientSDK {
             security$ = {};
         }
         const context = {
-            operationID: "post_/send-email",
+            operationID: "sendEmail",
             oAuth2Scopes: [],
             securitySource: this.options$.bearerAuth,
         };
@@ -114,7 +114,7 @@ export class MailEngine extends ClientSDK {
 
         return schemas$.parse(
             undefined,
-            () => operations.PostSendEmailResponse$.inboundSchema.parse(responseFields$),
+            () => operations.SendEmailResponse$.inboundSchema.parse(responseFields$),
             "Response validation failed"
         );
     }

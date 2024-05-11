@@ -7,7 +7,7 @@ const mailEngine = new MailEngine({
 });
 
 async function run() {
-    const result = await mailEngine.postSendEmail({
+    const result = await mailEngine.sendEmail({
         recipientEmail: "john.doe@example.com",
         recipientName: "John Doe",
         senderEmail: "noreply@example.com",
