@@ -4,7 +4,7 @@ info:
   description: An API for sending emails
   version: 1.0.0
 servers:
-  - url: https://mailengine.umbratic.com
+  - url: https://mailengine.umbratic.com/api
 paths:
   /send-email:
     post:

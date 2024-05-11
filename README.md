@@ -44,7 +44,7 @@ For supported JavaScript runtimes, please consult [RUNTIMES.md](RUNTIMES.md).
 ### Example
 
 ```typescript
-import { MailEngine } from "mailengine";
+import { MailEngine } from "@umbratic/mailengine";
 
 const mailEngine = new MailEngine({
     bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -90,8 +90,8 @@ Validation errors can also occur when either method arguments or data returned f
 
 
 ```typescript
-import { MailEngine } from "mailengine";
-import * as errors from "mailengine/models/errors";
+import { MailEngine } from "@umbratic/mailengine";
+import * as errors from "@umbratic/mailengine/models/errors";
 
 const mailEngine = new MailEngine({
     bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -141,10 +141,10 @@ You can override the default server globally by passing a server index to the `s
 
 | # | Server | Variables |
 | - | ------ | --------- |
-| 0 | `https://mailengine.umbratic.com` | None |
+| 0 | `https://mailengine.umbratic.com/api` | None |
 
 ```typescript
-import { MailEngine } from "mailengine";
+import { MailEngine } from "@umbratic/mailengine";
 
 const mailEngine = new MailEngine({
     serverIdx: 0,
@@ -175,10 +175,10 @@ run();
 The default server can also be overridden globally by passing a URL to the `serverURL` optional parameter when initializing the SDK client instance. For example:
 
 ```typescript
-import { MailEngine } from "mailengine";
+import { MailEngine } from "@umbratic/mailengine";
 
 const mailEngine = new MailEngine({
-    serverURL: "https://mailengine.umbratic.com",
+    serverURL: "https://mailengine.umbratic.com/api",
     bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
@@ -219,8 +219,8 @@ custom header and a timeout to requests and how to use the `"requestError"` hook
 to log errors:
 
 ```typescript
-import { MailEngine } from "mailengine";
-import { HTTPClient } from "mailengine/lib/http";
+import { MailEngine } from "@umbratic/mailengine";
+import { HTTPClient } from "@umbratic/mailengine/lib/http";
 
 const httpClient = new HTTPClient({
   // fetcher takes a function that has the same signature as native `fetch`.
@@ -263,7 +263,7 @@ This SDK supports the following security scheme globally:
 
 To authenticate with the API the `bearerAuth` parameter must be set when initializing the SDK client instance. For example:
 ```typescript
-import { MailEngine } from "mailengine";
+import { MailEngine } from "@umbratic/mailengine";
 
 const mailEngine = new MailEngine({
     bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",

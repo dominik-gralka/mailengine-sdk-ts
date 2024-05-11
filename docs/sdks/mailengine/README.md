@@ -16,7 +16,7 @@ Endpoint to send an email
 ### Example Usage
 
 ```typescript
-import { MailEngine } from "mailengine";
+import { MailEngine } from "@umbratic/mailengine";
 
 const mailEngine = new MailEngine({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",

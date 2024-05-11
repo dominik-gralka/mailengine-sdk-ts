@@ -9,7 +9,7 @@ import { Params, pathToFunc } from "./url";
 /**
  * Contains the list of servers available to the SDK
  */
-export const ServerList = ["https://mailengine.umbratic.com"] as const;
+export const ServerList = ["https://mailengine.umbratic.com/api"] as const;
 
 export type SDKOptions = {
     bearerAuth?: string | (() => Promise<string>);
@@ -49,7 +49,7 @@ export function serverURLFromOptions(options: SDKOptions): URL | null {
 export const SDK_METADATA = {
     language: "typescript",
     openapiDocVersion: "1.0.0",
-    sdkVersion: "0.1.2",
+    sdkVersion: "0.1.3",
     genVersion: "2.326.3",
-    userAgent: "speakeasy-sdk/typescript 0.1.2 2.326.3 1.0.0 mailengine",
+    userAgent: "speakeasy-sdk/typescript 0.1.3 2.326.3 1.0.0 @umbratic/mailengine",
 } as const;
