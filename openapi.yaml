@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
-  title: Email Sender API
-  description: An API for sending emails
+  title: MailEngine SDK for TypeScript
+  description: A service to send emails quick and easy
   version: 0.1.6
 servers:
   - url: https://mailengine.umbratic.com/api

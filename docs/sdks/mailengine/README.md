@@ -3,7 +3,7 @@
 
 ## Overview
 
-Email Sender API: An API for sending emails
+MailEngine SDK for TypeScript: A service to send emails quick and easy
 
 ### Available Operations
 
