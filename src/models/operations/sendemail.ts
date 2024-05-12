@@ -5,6 +5,14 @@
 import * as components from "../components";
 import * as z from "zod";
 
+/**
+ * Content type of the email (optional)
+ */
+export enum ContentType {
+    TextPlain = "text/plain",
+    TextHtml = "text/html",
+}
+
 export type SendEmailRequestBody = {
     recipientEmail?: string | undefined;
     recipientName?: string | undefined;
@@ -12,11 +20,22 @@ export type SendEmailRequestBody = {
     senderName?: string | undefined;
     emailSubject?: string | undefined;
     emailContent?: string | undefined;
+    /**
+     * Enable debug mode (optional)
+     */
+    debug?: boolean | undefined;
+    /**
+     * Content type of the email (optional)
+     */
+    contentType?: ContentType | undefined;
 };
 
 export type SendEmailResponse = {
     httpMeta: components.HTTPMetadata;
 };
+
+/** @internal */
+export const ContentType$: z.ZodNativeEnum<typeof ContentType> = z.nativeEnum(ContentType);
 
 /** @internal */
 export namespace SendEmailRequestBody$ {
@@ -27,6 +46,8 @@ export namespace SendEmailRequestBody$ {
         senderName?: string | undefined;
         emailSubject?: string | undefined;
         emailContent?: string | undefined;
+        debug?: boolean | undefined;
+        contentType?: ContentType | undefined;
     };
 
     export const inboundSchema: z.ZodType<SendEmailRequestBody, z.ZodTypeDef, Inbound> = z
@@ -37,6 +58,8 @@ export namespace SendEmailRequestBody$ {
             senderName: z.string().optional(),
             emailSubject: z.string().optional(),
             emailContent: z.string().optional(),
+            debug: z.boolean().default(false),
+            contentType: ContentType$.optional(),
         })
         .transform((v) => {
             return {
@@ -46,6 +69,8 @@ export namespace SendEmailRequestBody$ {
                 ...(v.senderName === undefined ? null : { senderName: v.senderName }),
                 ...(v.emailSubject === undefined ? null : { emailSubject: v.emailSubject }),
                 ...(v.emailContent === undefined ? null : { emailContent: v.emailContent }),
+                debug: v.debug,
+                ...(v.contentType === undefined ? null : { contentType: v.contentType }),
             };
         });
 
@@ -56,6 +81,8 @@ export namespace SendEmailRequestBody$ {
         senderName?: string | undefined;
         emailSubject?: string | undefined;
         emailContent?: string | undefined;
+        debug: boolean;
+        contentType?: ContentType | undefined;
     };
 
     export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, SendEmailRequestBody> = z
@@ -66,6 +93,8 @@ export namespace SendEmailRequestBody$ {
             senderName: z.string().optional(),
             emailSubject: z.string().optional(),
             emailContent: z.string().optional(),
+            debug: z.boolean().default(false),
+            contentType: ContentType$.optional(),
         })
         .transform((v) => {
             return {
@@ -75,6 +104,8 @@ export namespace SendEmailRequestBody$ {
                 ...(v.senderName === undefined ? null : { senderName: v.senderName }),
                 ...(v.emailSubject === undefined ? null : { emailSubject: v.emailSubject }),
                 ...(v.emailContent === undefined ? null : { emailContent: v.emailContent }),
+                debug: v.debug,
+                ...(v.contentType === undefined ? null : { contentType: v.contentType }),
             };
         });
 }

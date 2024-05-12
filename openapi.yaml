@@ -38,6 +38,14 @@ paths:
                 emailContent:
                   type: string
                   example: "This is a test email content."
+                debug:
+                  type: boolean
+                  description: Enable debug mode (optional)
+                  default: false
+                contentType:
+                  type: string
+                  description: Content type of the email (optional)
+                  enum: ["text/plain", "text/html"]
       responses:
         '200':
           description: Email sent successfully

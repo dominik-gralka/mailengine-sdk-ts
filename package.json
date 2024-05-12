@@ -1,6 +1,6 @@
 {
   "name": "@umbratic/mailengine",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "author": "Umbratic",  
   "main": "./index.js",
   "sideEffects": false,

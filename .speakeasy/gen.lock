@@ -1,15 +1,16 @@
 lockVersion: 2.0.0
 id: e8d21e3e-c354-43bf-a0e9-5c77dbb6769f
 management:
-  docChecksum: 6ffc45571d6258c48e6e4512c21170f6
+  docChecksum: aa14c278e8ff6264d10f26770850f8ba
   docVersion: 0.1.6
   speakeasyVersion: 1.286.0
   generationVersion: 2.326.3
-  releaseVersion: 0.1.5
-  configChecksum: c91ab1bd7ecca8cbc18758cb0af2e8bd
+  releaseVersion: 0.2.0
+  configChecksum: 0435048a673bd278eca2983d7cb10d05
 features:
   typescript:
     additionalDependencies: 0.1.0
+    constsAndDefaults: 0.1.5
     core: 3.9.3
     globalSecurity: 2.82.9
     globalSecurityCallbacks: 0.1.0
@@ -48,6 +49,7 @@ generatedFiles:
   - src/models/errors/index.ts
   - src/models/operations/index.ts
   - src/models/components/index.ts
+  - docs/models/operations/contenttype.md
   - docs/models/operations/sendemailrequestbody.md
   - docs/models/operations/sendemailresponse.md
   - docs/models/components/httpmetadata.md
